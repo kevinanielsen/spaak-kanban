@@ -1,0 +1,18 @@
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Sag {
+  id          Int    @id
+  type_id     Int
+  category_id Int?
+  status_id   Int
+  title       String
+  number      String
+  period_id   Int
+}
